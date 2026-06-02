@@ -4,7 +4,7 @@ In Phase 0, Point 1 (HTML5), the difference between a "newbie" and a "profession
 
 ---
 
-### Phase 0, Point 1: Semantic HTML5 & Structure
+### Phase 0, Point 1: Semantic HTML5 & Struc.mdture
 
 #### 1. What is Semantic HTML?
 "Semantic" means "relating to meaning." In HTML, it means using tags that describe the **type of content** they contain, rather than just how they look. 
