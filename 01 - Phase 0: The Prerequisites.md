@@ -99,6 +99,121 @@ When you start Phase 1 (React Fundamentals), you will be writing **JSX**. JSX is
 
 **Pro Tip:** In professional React development, we often use a tool called an **"Accessibility Linter"** that will actually throw an error and stop you from deploying your code if you use a `<div>` where you should have used a `<button>`.
 
+Excellent choice. Starting with a rock-solid foundation is what separates a "tutorial follower" from a "software engineer."
+
+We are now officially in **Phase 0, Point 1: Semantic HTML5.**
+
+### Your Goal today:
+To understand how to structure a webpage like a professional at a tech company, focusing on **meaning** rather than just **visuals.**
+
+---
+
+### Step 1: The Setup
+Before we write code, you need the industry-standard editor.
+1.  **Download VS Code:** [code.visualstudio.com](https://code.visualstudio.com/)
+2.  **Create a folder:** Name it `react-journey`.
+3.  **Create a file:** Inside that folder, create `index.html`.
+
+---
+
+### Step 2: The "Professional Boilerplate"
+Open your `index.html` and type `!` followed by the `Enter` key. VS Code will generate the standard HTML structure. 
+
+**Wait!** Before you continue, look at these two specific lines that professionals never ignore:
+*   `<html lang="en">`: This tells screen readers and search engines what language your site is in.
+*   `<meta name="viewport" ...>`: This ensures your site doesn't look like a tiny, unreadable desktop site on a mobile phone.
+
+---
+
+### Step 3: The Project — "The Company Article Page"
+Imagine you are a junior developer at **Medium** or **The New York Times**. Your task is to structure a blog post page.
+
+Copy this code into your `<body>` tag, but **read the comments** to understand the professional logic:
+
+```html
+<!-- The 'header' contains site-wide navigation, not just the title -->
+<header>
+  <nav aria-label="Global">
+    <div class="logo">TechPulse</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#articles">Articles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- 'main' tells the browser: "This is the unique content of this specific page" -->
+<main>
+  <!-- 'article' is used for content that could be shared on its own (like a post) -->
+  <article>
+    <header>
+      <h1>The Future of React in 2025</h1>
+      <p>Published on: <time datetime="2025-01-15">Jan 15, 2025</time></p>
+    </header>
+
+    <!-- 'section' groups related topics within the article -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>React continues to dominate the web industry due to its component-based architecture...</p>
+    </section>
+
+    <section id="key-features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Server Components</li>
+        <li>Optimized Rendering</li>
+      </ul>
+    </section>
+
+    <!-- 'aside' is for related info like an author bio or related links -->
+    <aside>
+      <h3>About the Author</h3>
+      <p>Jane Doe is a Senior Engineer at Meta.</p>
+    </aside>
+  </article>
+</main>
+
+<!-- 'footer' contains copyright, contact info, and legal links -->
+<footer>
+  <p>&copy; 2025 TechPulse Media. All rights reserved.</p>
+</footer>
+```
+
+---
+
+### Step 4: Your First Task (The "Homework")
+To master this, don't just copy-paste. I want you to build a **Product Page** for a company like **Apple** or **Tesla**.
+
+**Requirements:**
+1.  Use a `<header>` with a `<nav>`.
+2.  Use a `<main>` section.
+3.  Inside `<main>`, use a `<section>` for the "Product Image and Title".
+4.  Use another `<section>` for "Product Features" (use a `<ul>` and `<li>`).
+5.  Use a `<button>` for "Add to Cart." (**Important:** Do not use a `<div>` for a button!).
+6.  Use a `<footer>` with your name.
+
+---
+
+### Why are we doing this for React?
+When you get to Phase 1, you will write a React component like this:
+```jsx
+function ProductPage() {
+  return (
+    <main>
+      <section>...</section>
+    </main>
+  );
+}
+```
+If you don't know which HTML tag to use now, your React components will be "Div Soup" (just boxes inside boxes), which makes them hard to maintain and bad for SEO.
+
+**How to check your work:**
+Open your `index.html` in a browser. It will look ugly (just black text and white background). **That is good!** In Phase 0.1, we only care about the **skeleton**.
+
+**Once you have tried building your Product Page structure, tell me: "Done! Moving to CSS Layouts (Phase 0, Point 2)."** Or ask me if your structure looks correct!
+
+
+
 ---
 
 **Would you like me to explain Phase 0, Point 2 (CSS3) with a professional company case study next?**
