@@ -352,6 +352,146 @@ This is the **"Make or Break"** point. In a professional setting, a "Senior Reac
 
 If you master these JS concepts, React will feel easy. If you skip these, you will struggle with React's syntax every single day.
 
+Excellent. Now that you have the **skeleton** (HTML), it's time to give it **skin and muscle** (CSS).
+
+In a professional company, CSS isn't about making things "colorful"—it's about **Systematic Design.** You want your layout to be predictable and responsive so it doesn't break when a user views it on an iPhone SE or a 4k Monitor.
+
+---
+
+### Phase 0, Point 2: CSS Layouts (Flexbox, Grid, and the Box Model)
+
+#### 1. The Professional "Must-Have": The Box Model Reset
+Every browser (Chrome, Safari, Firefox) adds its own weird default spacing. Professionals "reset" this immediately.
+
+**The Concept:** By default, if you give a box a width of 100px and add 20px padding, the box becomes 140px wide. This is a nightmare for calculations.
+**The Fix:** We use `box-sizing: border-box`.
+
+**Add this to a `<style>` tag in your `index.html` (or a new `style.css` file):**
+```css
+/* The Professional Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif; /* Professional clean font */
+  line-height: 1.6;
+  color: #333;
+}
+```
+
+---
+
+#### 2. Flexbox (One-Dimensional Layout)
+Flexbox is used for **rows** or **columns**. Think of it as a way to distribute space between items. In React, 90% of your components (Navbars, Card contents, Buttons) will use Flexbox.
+
+**Real-World Case: The Professional Navbar**
+```css
+header nav {
+  display: flex;
+  justify-content: space-between; /* Logo on left, links on right */
+  align-items: center;            /* Perfectly centered vertically */
+  padding: 1rem 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* The modern way to space items */
+}
+
+header nav a {
+  text-decoration: none;
+  color: #0070f3; /* "React Blue" */
+  font-weight: 500;
+}
+```
+
+---
+
+#### 3. CSS Grid (Two-Dimensional Layout)
+While Flexbox is for a single row, **Grid** is for the whole page layout. It's much more powerful for building "dashboards."
+
+**Real-World Case: Product Gallery**
+Imagine you have a list of products. On desktop, you want 3 columns. On mobile, you want 1.
+
+```css
+.product-grid {
+  display: grid;
+  /* This line is "magic": it creates as many columns as fit, 
+     but each column must be at least 300px wide */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+```
+
+---
+
+#### 4. CSS Variables (Theming)
+Professionals never "hard-code" colors. They use variables. If the boss says "Change the brand color from Blue to Purple," you change it in **one** place.
+
+```css
+:root {
+  --primary-color: #0070f3;
+  --secondary-color: #666;
+  --bg-light: #f9f9f9;
+  --border-radius: 8px;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+}
+```
+
+---
+
+#### 5. Mobile-First Responsive Design
+Instead of writing CSS for Desktop and then "fixing" it for Mobile, professionals write for **Mobile first**, then use **Media Queries** to expand for Desktop.
+
+```css
+/* Mobile Styles (Default) */
+.hero-section {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Desktop Styles (Screen wider than 768px) */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 60px;
+    display: flex;
+    text-align: left;
+  }
+}
+```
+
+---
+
+### Your Task (The "Homework")
+Take the **Product Page** you built in the previous step and style it.
+
+**Requirements:**
+1.  **Reset:** Apply the `border-box` reset.
+2.  **Navigation:** Use **Flexbox** to put your Logo on the left and Nav links on the right.
+3.  **Layout:** Use **Grid** to create a 2-column layout for the main content (Product image on left, Product details on right) *only for desktop screens*.
+4.  **Button:** Style your "Add to Cart" button using a **CSS Variable** for the background color.
+5.  **Hover State:** Make the button change color slightly when the mouse hovers over it (`button:hover`).
+
+### Why this matters for React?
+In Phase 1, you will use **Tailwind CSS** or **CSS Modules**. Those tools use the exact same logic (Flex, Grid, Box Model). If you don't understand how `justify-content` works now, you will be very frustrated trying to align things in React.
+
+**When you have a styled Product Page that looks clean and works on mobile, tell me: "Done! Moving to Modern JavaScript (Phase 0, Point 3)."**
+
 ---
 
 ### Phase 0, Point 3: Modern JavaScript (ES6+)
